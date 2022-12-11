@@ -10,3 +10,4 @@ def play_checkers():
 
 play_checkers()
 
+#06 na b46
