@@ -189,3 +189,97 @@ cursor.execute(
 
 for row in cursor.fetchall():
     print(row)
+    
+    
+# ##Webscrapping
+
+# # from urllib.request import urlopen
+# # url = "http://olympus.realpython.org/profiles/aphrodite"
+# # html_page = urlopen(url)
+# # html_text = html_page.read().decode("utf-8")
+# # print(html_text)
+
+# from urllib.request import urlopen
+
+# url = "http://olympus.realpython.org/profiles/aphrodite"
+# page = urlopen(url)
+# html = page.read().decode('utf-8')
+
+# start_tag = "<title>"
+# end_tag = "</title>"
+# start_index = html.find(start_tag) + len(start_tag)
+# end_index = html.find(end_tag)
+
+# print(html[start_index:end_index])
+
+
+# ##regular expressions
+# import re
+# re.findall("ab*c", "ac")
+# re.findall("ab*c", "abcac")
+# re.findall("ab*c", "ABC", re.IGNORECASE)
+
+# match_results = re.search("ab*c", "ABC", re.IGNORECASE)
+# match_results.group()
+
+# string = "Everything is <replaced> if it's in <tags>."
+# string = re.sub("<.*>", "ELEPHANTS", string)
+# string
+# #Everything is ELEPHANTS.' ^greedy regular expression, replacing everything after <
+
+# string = "Everything is <replaced> if it's in <tags>."
+# string = re.sub("<.*>", "ELEPHANTS", string)
+# string
+# #"Everything is ELEPHANTS if it's in ELEPHANTS."
+
+##webscrapping another website
+# import re
+# from urllib.request import urlopen
+
+# url = "http://olympus.realpython.org/profiles/dionysus"
+# page = urlopen(url)
+# html = page.read().decode("utf-8")
+
+# pattern = "<title.*?>.*?</title.*?>"
+# match_results = re.search(pattern, html, re.IGNORECASE)
+# title = match_results.group()
+# title = re.sub("<.*?>", "", title) # Remove HTML tags
+
+# print(title)
+
+
+#  Write a script that grabs the full HTML from the page
+# http://olympus.realpython.org/profiles/dionysus
+
+
+import re
+from urllib.request import urlopen
+
+url = "http://olympus.realpython.org/profiles/dionysus"
+page = urlopen(url)
+html = page.read().decode("utf-8")
+
+# print(html)
+
+# Use the string .find() method to display the text following “Name:”
+# and “Favorite Color:” (not including any leading spaces or trailing
+# HTML tags that might appear on the same line).
+
+start_text = "Name: "
+end_text = "</h2>"
+start_index = html.find(start_text) + len(start_text)
+end_index = html.find(end_text)
+
+print(html[start_index:end_index])
+
+start_text = "Favorite Color: "
+end_text = "</center>"
+start_index = html.find(start_text) + len(start_text)
+end_index = html.find(end_text)
+
+print(html[start_index:end_index])
+
+# Repeat the previous exercise using regular expressions. The end
+# of each pattern should be a “<” (the start of an HTML tag) or a newline character, and you should remove any extra spaces or newline
+# characters from the resulting text using the string .strip() method.
+
