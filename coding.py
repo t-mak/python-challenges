@@ -354,3 +354,89 @@ for i in range(4):
 if i < 3:
     time.sleep(30)
 
+
+    ###Plotting graphs
+
+from matplotlib import pyplot as plt
+import numpy as np
+# plt.plot([1, 2, 3, 4, 5])
+# plt.show()
+
+
+# xs = [1, 2, 3, 4, 5]
+# ys = [2, 4, 6, 8, 10]
+
+# xs = [1, 2, 3, 4, 5]
+# ys = [3, -1, 4, 0, 6]
+
+##Colored graph
+# plt.plot([2, 4, 6, 8, 10], "g-o")
+# plt.show()
+
+# plt.plot(xs, ys)
+# plt.show()
+
+##Multiple graphs
+# xs = [0, 1, 2, 3, 4]
+# y1 = [1, 2, 3, 4, 5]
+# y2 = [1, 2, 4, 8, 16]
+# plt.plot(xs, y1, xs, y2)
+# plt.show()
+
+# plt.plot([1, 2, 3, 4, 5], "g-o")
+# plt.plot([1, 2, 4, 8, 16], "b-^")
+# plt.show()
+
+
+
+# array = np.arange(1, 6)
+# plt.plot(array)
+# plt.show()
+
+# data = np.arange(1, 21).reshape(5, 4)
+# plt.plot(data)
+# plt.show()
+
+# days = np.arange(0, 21)
+# other_site = np.arange(0, 21)
+# real_python = other_site ** 2
+# plt.plot(days, other_site)
+# plt.plot(days, real_python)
+# plt.show()
+
+
+# days = np.arange(0, 21)
+# other_site = np.arange(0, 21)
+# real_python = other_site ** 2
+# plt.plot(days, other_site)
+# plt.plot(days, real_python)
+# plt.xticks([0, 5, 10, 15, 20])
+# plt.xlabel("Days of Reading")
+# plt.ylabel("Amount of Python Learned")
+# plt.title("Python Learned Reading Real Python vs Other Site")
+# plt.legend(["Other Site", "Real Python"])
+
+# plt.show()
+
+
+##bar chart
+# xs = [1, 2, 3, 4, 5]
+# tops = [2, 4, 6, 8, 10]
+# plt.bar(xs, tops)
+# plt.show()
+
+# fruits = {
+# "apples": 10,
+# "oranges": 16,
+# "bananas": 9,
+# "pears": 4,
+# }
+# plt.bar(fruits.keys(), fruits.values())
+# plt.show()
+
+
+##save to a file
+xs = np.arange(1, 6)
+tops = np.arange(2, 12, 2)
+plt.bar(xs, tops)
+plt.savefig("bar.png")
